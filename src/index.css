@@ -88,9 +88,10 @@ form{
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 250px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  border-radius: 5px;
 }
 
 .card:hover{
@@ -105,6 +106,11 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.card > img {
+  display: block;
+  max-width: 100%;
 }
 
 table {
