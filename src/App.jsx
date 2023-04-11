@@ -2,22 +2,31 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import React, { useContext } from "react";
-import { ContextGlobal } from "./Components/utils/global.context";
+import Layout from "./Components/layout";
+import React, { useContext, useMemo, useState } from "react";
+import {ContextGlobal, themes } from "./Components/utils/global.context";
 
 
 
 function App() {
 
-  const globalContext = useContext(ContextGlobal);
+  
+
+
+
+  // const globalContext = useContext(ContextGlobal);
   // const themeMode = globalContext.theme.darkmode;
 
   return (
-      <div className="App app-container">
+    // <ContextGlobal.Provider value={providerValue}>
+      <div className="App app-container" >
+        <Layout>
           <Navbar/>
           <Outlet/>
           <Footer/>
+        </Layout>
       </div>
+    // </ContextGlobal.Provider>
   );
 }
 

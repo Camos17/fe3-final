@@ -7,7 +7,8 @@ import { ContextGlobal } from './utils/global.context';
 
 const Navbar = () => {
 
-  const globalContext = useContext(ContextGlobal);
+  const {theme, handleChangeTheme} = useContext(ContextGlobal);
+  console.log('globalData navbar', theme);
   // const theme = globalContext.theme.darkmode;
   // console.log("theme", theme);
 
@@ -15,13 +16,13 @@ const Navbar = () => {
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <div>
-        <Link to="home">Home</Link>
-        <Link to="dentist">Dentist Detail</Link>
-        <Link to="favs">Favorites</Link>
-        <Link to="contact">Contacto</Link>
+        <Link to="home" style={{color: theme.font}}>Home</Link>
+        <Link to="dentist" style={{color: theme.font}}>Dentist Detail</Link>
+        <Link to="favs" style={{color: theme.font}}>Favorites</Link>
+        <Link to="contact" style={{color: theme.font}}>Contacto</Link>
       </div>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
+      <button onClick={handleChangeTheme} style={{background: theme.background, color: theme.font}}>Change theme</button>
     </nav>
   )
 }

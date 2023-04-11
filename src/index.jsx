@@ -7,13 +7,13 @@ import Detail from './Routes/Detail';
 import Favs from './Routes/Favs';
 import Contact from './Routes/Contact';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { GlobalProvider } from './Components/utils/global.context'
+import { ContextProvider } from './Components/utils/global.context'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GlobalProvider>
+    <ContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App/>}>
@@ -24,7 +24,7 @@ root.render(
           </Route>
         </Routes>
       </BrowserRouter>
-    </GlobalProvider>
+    </ContextProvider>
   </React.StrictMode>
 );
 
