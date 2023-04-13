@@ -16,8 +16,8 @@ const Navbar = () => {
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <div>
-        <Link to="home" style={{color: theme.font}}>Home</Link>
-        <Link to="dentist" style={{color: theme.font}}>Dentist Detail</Link>
+        <Link to={'/'} style={{color: theme.font}}>Home</Link>
+        {/* <Link to="dentist/:id" style={{color: theme.font}}>Dentist Detail</Link> */}
         <Link to="favs" style={{color: theme.font}}>Favorites</Link>
         <Link to="contact" style={{color: theme.font}}>Contacto</Link>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
@@ -6,6 +7,9 @@ import React from 'react'
 const Detail = () => {
  
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+
+  const params = useParams();
+  console.log('current id', params.id);
 
   return (
     <>
