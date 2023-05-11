@@ -24,7 +24,8 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+  background-color: #53599A;
+  color: white;
   padding: 10px;
   border: none;
   width: 100%;
@@ -36,11 +37,35 @@ h1{
   margin-bottom: 2rem;
 }
 
-nav{
+button, .btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar {
   display: flex;
-  width: 95vw;
+  width: 100%;
+  height: 60px;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+  background-color: #8bb9e0;
+}
+
+.navbar a {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .links {
+  margin-left: 1.5rem;
 }
 
 a{
@@ -51,6 +76,7 @@ a{
 }
 a:hover{
   color: rgb(136, 136, 136);
+  text-decoration: underline;
 } 
 
 footer {
@@ -62,8 +88,10 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 40px;
+  height: 100px;
   margin-top: 2rem;
+  background-color: #983a59;
+  color: white;
 }
 
 footer > img{
@@ -92,7 +120,7 @@ form{
   width: 250px;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   margin-bottom: 2rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  border: 2px solid #f9f6f6;
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 15px 0px rgba(168,165,168,1);
   -moz-box-shadow: 5px 5px 15px 0px rgba(168,165,168,1);
@@ -100,7 +128,7 @@ form{
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 2px solid #7a7ac1;
 }
 
 .card-grid{
@@ -117,6 +145,25 @@ form{
   display: block;
   max-width: 100%;
   background-color: #f0f8ff;
+}
+
+.card .title {
+  font-weight: bold;
+}
+
+.card .subtitle {
+  font-style: italic;
+  color: #736f6f;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.card .detail-btn {
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 0.75rem;
+  margin-right: 1.5rem;
 }
 
 table {

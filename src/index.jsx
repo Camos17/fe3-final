@@ -9,29 +9,37 @@ import Contact from './Routes/Contact';
 import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import { ContextProvider } from './Components/utils/global.context'
 
-// const router = createBrowserRouter([
-//   {
-//     element: <App />,
-//     children: [
-//       {
-//         path: '/',
-//         element: <Home />
-//       },
-//       {
-//         path: '/dentist/:id',
-//         element: <Detail />
-//       }
-//     ]
+const router = createBrowserRouter([
+  {
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/dentist/:id',
+        element: <Detail />
+      },
+      {
+        path: '/favs',
+        element: <Favs />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      }
+    ]
 
-//   }
-// ]);
+  }
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ContextProvider>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route element={<App/>}>
             <Route path='/' element={<Home/>}></Route>
@@ -40,8 +48,8 @@ root.render(
             <Route path='contact' element={<Contact/>}></Route>
           </Route>
         </Routes>
-      </BrowserRouter>
-      {/* <RouterProvider router={router} /> */}
+      </BrowserRouter> */}
+      <RouterProvider router={router} />
     </ContextProvider>
   </React.StrictMode>
 );
