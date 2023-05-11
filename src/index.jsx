@@ -6,24 +6,50 @@ import Home from './Routes/Home';
 import Detail from './Routes/Detail';
 import Favs from './Routes/Favs';
 import Contact from './Routes/Contact';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import { ContextProvider } from './Components/utils/global.context'
+
+const router = createBrowserRouter([
+  {
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/dentist/:id',
+        element: <Detail />
+      },
+      {
+        path: '/favs',
+        element: <Favs />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      }
+    ]
+
+  }
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ContextProvider>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
-          <Route path='/' element={<App/>}>
-            <Route path='home' element={<Home/>}></Route>
-            <Route path='dentist' element={<Detail/>}></Route>
+          <Route element={<App/>}>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='dentist/:id' element={<Detail/>}></Route>
             <Route path='favs' element={<Favs/>}></Route>
             <Route path='contact' element={<Contact/>}></Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <RouterProvider router={router} />
     </ContextProvider>
   </React.StrictMode>
 );
