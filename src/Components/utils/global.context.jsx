@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useMemo, useReducer, useState } from "react";
+import React, { createContext, useCallback, useEffect, useMemo, useReducer, useState } from "react";
 
 // const theme = {
 //   lightmode: true,
@@ -49,7 +49,7 @@ export const ContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(themes.light);
   const [data, setData] = useState([]);
 
-  const handleChangeTheme = () => {
+  const handleChangeTheme = useCallback( () => {
     if (theme === themes.dark) {
       console.log("handle theme -1", theme);
       setTheme(themes.light);
@@ -58,13 +58,21 @@ export const ContextProvider = ({ children }) => {
       console.log("handle theme -2", theme);
       setTheme(themes.dark);
     }
-  };
+  }, [theme]);
 
   const getDentistsData = async () => {
-    const dentists = await fetch('https://jsonplaceholder.typicode.com/users');
-    const parsedDentistsData = await dentists.json();
-    console.log('dentists', dentists, 'data', parsedDentistsData);
-    setData(parsedDentistsData);
+    const storedDentists = localStorage.getItem('all-dentists');
+
+    if (!storedDentists) {
+      const dentists = await fetch('https://jsonplaceholder.typicode.com/users');
+      const parsedDentistsData = await dentists.json();
+      console.log('dentists', dentists, 'data', parsedDentistsData);
+      localStorage.setItem('all-dentists', JSON.stringify(parsedDentistsData));
+      setData(parsedDentistsData);
+      console.log('Parsed Data', data);
+    } else {
+      setData(JSON.parse(storedDentists));
+    }
   };
 
   useEffect(() => {

@@ -24,7 +24,8 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+  background-color: #53599A;
+  color: white;
   padding: 10px;
   border: none;
   width: 100%;
@@ -33,13 +34,38 @@ code {
 
 h1{
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-nav{
+button, .btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar {
   display: flex;
-  width: 95vw;
+  width: 100%;
+  height: 60px;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+  background-color: #8bb9e0;
+}
+
+.navbar a {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .links {
+  margin-left: 1.5rem;
 }
 
 a{
@@ -50,18 +76,22 @@ a{
 }
 a:hover{
   color: rgb(136, 136, 136);
+  text-decoration: underline;
 } 
 
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
-  height: 40px;
+  width: 100%;
+  height: 100px;
   margin-top: 2rem;
+  background-color: #983a59;
+  color: white;
 }
 
 footer > img{
@@ -71,7 +101,6 @@ footer > img{
 }
 footer > p{
   margin: 0;
-  padding-top: 0.7rem;
 }
 
 form{
@@ -89,13 +118,17 @@ form{
   flex-direction: column;
   align-items: center;
   width: 250px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
-  border-radius: 5px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid #f9f6f6;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(168,165,168,1);
+  -moz-box-shadow: 5px 5px 15px 0px rgba(168,165,168,1);
+  box-shadow: 5px 5px 15px 0px rgba(168,165,168,1);
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 2px solid #7a7ac1;
 }
 
 .card-grid{
@@ -111,6 +144,26 @@ form{
 .card > img {
   display: block;
   max-width: 100%;
+  background-color: #f0f8ff;
+}
+
+.card .title {
+  font-weight: bold;
+}
+
+.card .subtitle {
+  font-style: italic;
+  color: #736f6f;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.card .detail-btn {
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 0.75rem;
+  margin-right: 1.5rem;
 }
 
 table {
